@@ -11,5 +11,5 @@ class Transportlidzeklis():
         print(f'Motora tilpums: {self.motoraTilpums}')
         print(f"Atrumkarba: {self.atrumkarba}")
 
-auto = Transportlidzeklis(modelis='X5',krasa='sarkana',motoraTilpums='3.0',atrumkarba='Automatiska')
+auto = Transportlidzeklis('X5','sarkana','3.0','Automatiska')
 auto.dati()
