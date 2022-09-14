@@ -1,4 +1,5 @@
 import datetime as dt
+import time
 
 class Rekins():
     def __init__(self, klients, veltijums, izmers, materials):
@@ -6,6 +7,7 @@ class Rekins():
         self.veltijums = veltijums
         self.izmers = izmers
         self.materials = materials
+        laiks = str(dt.datetime.now())
     
     def aprekins(self):
         darba_samaksa = 15
@@ -20,8 +22,7 @@ class Rekins():
         print(f'Veltijums: {self.veltijums}')
         print(f'Izmers: {self.izmers}')
         print(f'Materials: {self.materials}')
-        print(f'\n Rekina Summa: {}')
+        print(f'Rekina Summa: {self.aprekins()}')
 
 aa = Rekins('Anna','Lai izdodas!',[150,200,150],3.5)
-
-aa.aprekins()
+aa.izdrukat()
