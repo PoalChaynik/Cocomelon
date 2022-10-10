@@ -15,7 +15,7 @@ gui.theme('CyberpunkTheme')
 
 
 
-laditeLayout = [[gui.Text('Ievadi Vardu')],[gui.InputText('',key='Vards'),gui.Text('')],[gui.Text('Ievadi Veltijumu')],[gui.InputText('',key='Veltijums')],[gui.Text('Ievadi Izmeru (platums/garums/augstums)')],[gui.InputText('',key='Izmers')],[gui.Text('Ievadi Materiala Cenu')],[gui.InputText('',key='Materials'),gui.Button('Aprekinat',key='Aprekins')]]
+laditeLayout = [[gui.Text('Ievadi Vardu')],[gui.InputText('',key='Vards'),gui.Text('',key='-DATI-')],[gui.Text('Ievadi Veltijumu')],[gui.InputText('',key='Veltijums')],[gui.Text('Ievadi Izmeru (platums/garums/augstums)')],[gui.InputText('',key='Izmers')],[gui.Text('Ievadi Materiala Cenu')],[gui.InputText('',key='Materials'),gui.Button('Aprekinat',key='Aprekins')]]
 
 layout = [[gui.Text('H e l l o ')],[gui.Button("Do NOT Press Here!",size=(5,5)),gui.Button('Exit')],[gui.Text('',key='-Choice-')]]
 
@@ -26,7 +26,7 @@ while True:
     if event == 'Aprekins':
         print('Poga Nospiesta')
         dati = Rekins(values['Vards'],values['Veltijums'],values['Izmers'],values['Materials'])
-        print(dati.aprekins()[1])
+        window['-DATI-'].update('Klients: '+values['Vards']+'\nVeltijums: '+values['Veltijums']+'\nIzmers: '+values['Izmers']+'\nMateriala Cena: '+values['Materials']+'\nLaiks: '+str(dati.izdrukat()[0])+'\nSumma: '+str(dati.izdrukat()[1]))
     if event == gui.WIN_CLOSED:
         break
     if event == 'Exit':

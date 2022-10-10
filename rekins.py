@@ -27,7 +27,8 @@ class Rekins():
         print(f'Materials: {self.materials}')
         print(f'Laiks: {self.laiks}')
         print(f'Rekina Summa: {self.aprekins()}')
-        return [self.laiks,self.aprekins()]
+        date=[self.laiks,str(self.aprekins())]
+        return [x for x in date]
 
     def saglabat(self):
         with open('rekini.csv', 'a',encoding="utf-8",newline='') as fails:
