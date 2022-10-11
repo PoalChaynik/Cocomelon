@@ -2,24 +2,22 @@ import rekins
 from rekins import Rekins
 import PySimpleGUI as gui
 
-gui.LOOK_AND_FEEL_TABLE['CyberpunkTheme'] = {'BACKGROUND': '#FFFC2E',
+gui.LOOK_AND_FEEL_TABLE['CyberpunkTheme'] = {'BACKGROUND': '#FF2525',
                                         'TEXT': '#19F1FF',
-                                        'INPUT': '#FF2525',
+                                        'INPUT': '#FFFC2E',
                                         'TEXT_INPUT': '#000000',
                                         'SCROLL': '#19F1FF',
-                                        'BUTTON': ('#FFFC2E', '#19F1FF'),
+                                        'BUTTON': ('#FF2525', '#19F1FF'),
                                         'PROGRESS': ('#FF2525', '#FFFC2E'),
                                         'BORDER': 1, 'SLIDER_DEPTH': 0, 
 'PROGRESS_DEPTH': 0, }
 gui.theme('CyberpunkTheme')
 
-
-
-laditeLayout = [[gui.Text('Ievadi Vardu')],[gui.InputText('',key='Vards'),gui.Text('',key='-DATI-')],[gui.Text('Ievadi Veltijumu')],[gui.InputText('',key='Veltijums')],[gui.Text('Ievadi Izmeru (platums/garums/augstums)')],[gui.InputText('',key='Izmers')],[gui.Text('Ievadi Materiala Cenu')],[gui.InputText('',key='Materials'),gui.Button('Aprekinat',key='Aprekins')]]
+laditeLayout = [[gui.Text('Ievadi Vardu',expand_x=False, expand_y=False,size=(10,1))],[gui.InputText('',key='Vards',expand_x=False, expand_y=False,size=(15,1)),gui.Text('',key='-DATI-',expand_x=False, expand_y=False,pad=(100,0))],[gui.Text('Ievadi Veltijumu',expand_x=False, expand_y=False,size=(15,1))],[gui.InputText('',key='Veltijums',expand_x=False, expand_y=False,size=(15,1))],[gui.Text('Ievadi Izmeru (platums/garums/augstums)',expand_x=False, expand_y=False,size=(30,1))],[gui.InputText('',key='Izmers',expand_x=False, expand_y=False,size=(15,1))],[gui.Text('Ievadi Materiala Cenu',expand_x=False, expand_y=False,size=(25,1))],[gui.InputText('',key='Materials',expand_x=False, expand_y=False,size=(15,1)),gui.Button('Aprekinat',key='Aprekins',expand_x=False, expand_y=False,size=(7,1))]]
 
 layout = [[gui.Text('H e l l o ')],[gui.Button("Do NOT Press Here!",size=(5,5)),gui.Button('Exit')],[gui.Text('',key='-Choice-')]]
 
-window = gui.Window('Rekins',laditeLayout, size=(500,250),finalize=True)
+window = gui.Window('Rekins',laditeLayout, size=(500,300),finalize=True)
 
 while True:
     event, values = window.read()
