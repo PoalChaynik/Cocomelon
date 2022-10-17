@@ -26,3 +26,91 @@ dzD.pirkumi()
 dzD.Davanas()
 
 #-- 2 UZDEVUMS --#
+
+from tkinter import Button
+from tkinter.font import BOLD
+from PIL import Image
+
+def thumbnail(nosaukums,izmers):
+    with Image.open(nosaukums) as img:
+        izmeers = izmers.split(',')
+        img.thumbnail((int(izmeers[0]),int(izmeers[1])))
+        img.save('bilde.png',img.format)
+
+thumbnail('emoji.png','100,100')
+
+#-- 3 UZDEVUMS --#
+
+from bs4 import BeautifulSoup as bs
+import requests
+
+url = requests.get("https://vvsprogramm.github.io/2021_debug/")
+a = bs(url.text, "html.parser")
+print(a.prettify())
+
+
+#-- 4 UZDEVUMS --#
+
+import PySimpleGUI as gui
+import random
+
+def CPUIzvele():
+    varianti=['Akmens','Skeres','Papirs']
+    izveele = random.choice(varianti)
+    return izveele
+
+
+gui.theme('DarkAmber')
+
+
+layout = [[gui.Text('Izvelaties Akmens, Skeres vai Papirs:')],
+[gui.Button('Akmens',key='rock'),gui.Button('Skeres',key='scissors'),gui.Button('Papirs',key='paper')],
+[gui.Text('Jusu Izvele: ',key='your_choice')],
+[gui.Text('Datora Izvele: ',key='cpu_choice')],
+[gui.Text('',key='-STATUS-',size=(200,None),justification='c',font=('Arial',32, 'bold'))]]
+
+window = gui.Window('RockPaperScissors',layout,size=(300,250),element_justification='c')
+
+while True:
+    event, values = window.read()
+    if event == gui.WIN_CLOSED:
+        break
+
+    if event == 'rock':
+        cpu = CPUIzvele()
+        window['cpu_choice'].update('Datora Izvele: '+cpu)
+        window['your_choice'].update('Jusu Izvele: '+'Akmens')
+        if cpu == 'Papirs':
+            window['-STATUS-'].update('DEFEAT')
+        if cpu == 'Akmens':
+            window['-STATUS-'].update('DRAW')
+        if cpu == 'Skeres':
+            window['-STATUS-'].update('VICTORY!') 
+    if event == 'scissors':
+        cpu = CPUIzvele()
+        window['cpu_choice'].update('Datora Izvele: '+cpu)
+        window['your_choice'].update('Jusu Izvele: '+'Skeres')
+        if cpu == 'Papirs':
+            window['-STATUS-'].update('VICTORY!')
+        if cpu == 'Akmens':
+            window['-STATUS-'].update('DEFEAT')
+        if cpu == 'Skeres':
+            window['-STATUS-'].update('DRAW') 
+    if event == 'paper':
+        cpu = CPUIzvele()
+        window['cpu_choice'].update('Datora Izvele: '+cpu)
+        window['your_choice'].update('Jusu Izvele: '+'Papirs')
+        if cpu == 'Papirs':
+            window['-STATUS-'].update('DRAW')
+        if cpu == 'Akmens':
+            window['-STATUS-'].update('VICTORY!')
+        if cpu == 'Skeres':
+            window['-STATUS-'].update('DEFEAT') 
+        
+        
+
+window.close()
+
+#-- 5 UZDEVUMS --#
+
+#-----------------------------------------------------------
