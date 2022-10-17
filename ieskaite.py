@@ -27,8 +27,6 @@ dzD.Davanas()
 
 #-- 2 UZDEVUMS --#
 
-from tkinter import Button
-from tkinter.font import BOLD
 from PIL import Image
 
 def thumbnail(nosaukums,izmers):
