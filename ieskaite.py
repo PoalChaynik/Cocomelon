@@ -64,7 +64,7 @@ gui.theme('DarkAmber')
 
 
 layout = [[gui.Text('Izvelaties Akmens, Skeres vai Papirs:')],
-[gui.Button('Akmens',key='rock'),gui.Button('Skeres',key='scissors'),gui.Button('Papirs',key='paper')],
+[gui.Button('Akmens',key='rock',size=(10,5)),gui.Button('Skeres',key='scissors',size=(10,5)),gui.Button('Papirs',key='paper',size=(10,5))],
 [gui.Text('Jusu Izvele: ',key='your_choice')],
 [gui.Text('Datora Izvele: ',key='cpu_choice')],
 [gui.Text('',key='-STATUS-',size=(200,None),justification='c',font=('Arial',32, 'bold'))]]
