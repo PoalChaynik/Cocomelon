@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup as bs
+from soupchick import BeautifulSoup as bs
 import requests
  
 def apstrada_lapu(url):

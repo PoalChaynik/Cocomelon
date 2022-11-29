@@ -39,7 +39,7 @@ thumbnail('emoji.png','100,100')
 
 #-- 3 UZDEVUMS --#
 
-from bs4 import BeautifulSoup as bs
+from soupchick import BeautifulSoup as bs
 import requests
 
 url = requests.get("https://vvsprogramm.github.io/2021_debug/")
